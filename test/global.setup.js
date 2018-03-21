@@ -18,3 +18,4 @@ beforeEach(function() {
     director.boshConfigCache = _.cloneDeep(boshConfigCacheDetails);
     director.deploymentIpsCache = _.cloneDeep(deploymentIpsCacheDetails);
 });
+
