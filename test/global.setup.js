@@ -6,16 +6,15 @@ const director = lib.bosh.director;
 let boshConfigCacheDetails = {};
 let deploymentIpsCacheDetails = {};
 director.ready.then(() => {
-    boshConfigCacheDetails = _.cloneDeep(director.boshConfigCache);
-    deploymentIpsCacheDetails = _.cloneDeep(director.deploymentIpsCache);
+  boshConfigCacheDetails = _.cloneDeep(director.boshConfigCache);
+  deploymentIpsCacheDetails = _.cloneDeep(director.deploymentIpsCache);
 });
 
-function processUnhandledRejection(reason, p) {
-    console.log('ignoring this error... ');
+function processUnhandledRejection() {
+  console.log('ignoring this error... ');
 }
 process.on('unhandledRejection', processUnhandledRejection);
-beforeEach(function() {
-    director.boshConfigCache = _.cloneDeep(boshConfigCacheDetails);
-    director.deploymentIpsCache = _.cloneDeep(deploymentIpsCacheDetails);
+beforeEach(function () {
+  director.boshConfigCache = _.cloneDeep(boshConfigCacheDetails);
+  director.deploymentIpsCache = _.cloneDeep(deploymentIpsCacheDetails);
 });
-
