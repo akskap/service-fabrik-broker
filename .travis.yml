@@ -25,7 +25,7 @@ script:
        git diff
        echo "FAILED: Run js-beautify(npm run jsformat)" && exit 1;
      else
-       echo "No changes to the code formatting required.. "
+       echo "No changes to the code formatting required... "
      fi
   - "npm run -s test-coverage"
   - "npm run -s jsdoc"
