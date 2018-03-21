@@ -109,7 +109,7 @@
     "test": "rm -f ./logs/test.log && _mocha test/ test/acceptance/",
     "test-ci": "node lib/LoadDeploymentActions.js && rm -f ./logs/test.log && babel-node ./node_modules/.bin/isparta cover --report cobertura _mocha  -- test/acceptance/ test/ ",
     "test-cov": "node lib/LoadDeploymentActions.js &&  rm -f ./logs/test.log && babel-node ./node_modules/.bin/isparta cover _mocha -- test/ test/acceptance/",
-    "test-coverage": "node lib/LoadDeploymentActions.js && ./node_modules/.bin/mocha test -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
+    "test-coverage": "./node_modules/.bin/mocha test -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
     "jsformat": "js-beautify -r $(find -iname '*.js' -not -path '*node_modules*' -not -path '*public/js*')"
   }
 }
