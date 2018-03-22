@@ -108,9 +108,9 @@
     "jshint": "jshint --exclude coverage,docs,jsdoc,node_modules,public,tmp  --reporter=node_modules/jshint-stylish .",
     "jshint-ci": "jshint --exclude coverage,docs,jsdoc,node_modules,public,tmp --reporter=checkstyle .",
     "test": "rm -f ./logs/test.log && _mocha test/ test/acceptance/",
-    "test-ci": "node lib/LoadDeploymentActions.js && rm -f ./logs/test.log && babel-node ./node_modules/.bin/isparta cover --report cobertura _mocha  -- test/acceptance/ test/ ",
-    "test-cov": "node lib/LoadDeploymentActions.js && rm -f ./logs/test.log && babel-node ./node_modules/.bin/isparta cover _mocha -- test/ test/acceptance/",
-    "test-coverage": "node lib/LoadDeploymentActions.js && rm -f ./logs/test.log && babel-node ./node_modules/.bin/isparta cover --report lcovonly _mocha  -- test/acceptance/ test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test-ci": "rm -f ./logs/test.log && babel-node ./node_modules/.bin/isparta cover --report cobertura _mocha  -- test/acceptance/ test/ ",
+    "test-cov": "rm -f ./logs/test.log && babel-node ./node_modules/.bin/isparta cover _mocha -- test/ test/acceptance/",
+    "test-coverall": "rm -f ./logs/test.log && babel-node ./node_modules/.bin/isparta cover --report lcovonly _mocha -- test/acceptance/ test/ && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "jsformat": "js-beautify -r $(find . -iname '*.js' -not -path '*node_modules*' -not -path '*public/js*')"
   }
 }
